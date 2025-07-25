@@ -39,16 +39,28 @@ document.addEventListener('DOMContentLoaded', function () {
             const accordionButtons = document.querySelectorAll('.accordion-button');
             accordionButtons.forEach(button => {
                 button.addEventListener('click', () => {
-                    if (content) {
-const content = button.nextElementSibling;
-                    const icon = button.querySelector('.accordion-icon');
-
-                    accordionButtons.forEach(otherButton => {
-                        if (otherButton !== button) {
-                            if (otherButton.nextElementSibling) { otherButton.nextElementSibling.style.maxHeight = null; }
-                            otherButton.querySelector('.accordion-icon').classList.remove('rotate-180');
-                        }
-                    });
+        let parent = button.parentElement;
+        while (parent && !(parent.tagName === 'DIV' && parent.hasAttribute('itemscope') && parent.getAttribute('itemtype') === 'https://schema.org/Question')) {
+            parent = parent.parentElement;
+        }
+        if (!parent) return;
+        const content = parent.querySelector('.accordion-content');
+        const icon = button.querySelector('.accordion-icon');
+        if (!content) return;
+        accordionButtons.forEach(otherButton => {
+            if (otherButton !== button) {
+                if (otherButton.nextElementSibling) { otherButton.nextElementSibling.style.maxHeight = null; }
+                otherButton.querySelector('.accordion-icon').classList.remove('rotate-180');
+            }
+        });
+        if (content.style.maxHeight) {
+            content.style.maxHeight = null;
+            icon.classList.remove('rotate-180');
+        } else {
+            content.style.maxHeight = content.scrollHeight + "px";
+            icon.classList.add('rotate-180');
+        }
+    });
 
                     if (content.style.maxHeight) {
                         content.style.maxHeight = null;
