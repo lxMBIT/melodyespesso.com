@@ -1,13 +1,6 @@
-],
-      "areaServed": {
-        "@type": "Country",
-        "name": "RU"
-      }
-    }
-    
 
 
-        document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function () {
             // Carousel Logic
             const track = document.getElementById('carousel-track');
             if (track) {
@@ -46,17 +39,12 @@
             const accordionButtons = document.querySelectorAll('.accordion-button');
             accordionButtons.forEach(button => {
                 button.addEventListener('click', () => {
-                    let parent = button.parentElement;
-while (parent && !(parent.tagName === 'DIV' && parent.hasAttribute('itemscope') && parent.getAttribute('itemtype') === 'https://schema.org/Question')) {
-    parent = parent.parentElement;
-}
-if (!parent) return;
-const content = parent.querySelector('.accordion-content');
+                    const content = button.nextElementSibling;
                     const icon = button.querySelector('.accordion-icon');
 
                     accordionButtons.forEach(otherButton => {
                         if (otherButton !== button) {
-                            if (otherButton.nextElementSibling) { otherButton.nextElementSibling.style.maxHeight = null; }
+                            otherButton.nextElementSibling.style.maxHeight = null;
                             otherButton.querySelector('.accordion-icon').classList.remove('rotate-180');
                         }
                     });
