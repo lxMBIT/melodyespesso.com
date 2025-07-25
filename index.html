@@ -362,7 +362,7 @@
             accordionButtons.forEach(button => {
                 button.addEventListener('click', () => {
                     let parent = button.parentElement;
-while (parent && !(parent.tagName === 'DIV' && parent.hasAttribute('itemscope') and parent.getAttribute('itemtype') === 'https://schema.org/Question')) {
+while (parent && !(parent.tagName === 'DIV' && parent.hasAttribute('itemscope') && parent.getAttribute('itemtype') === 'https://schema.org/Question')) {
     parent = parent.parentElement;
 }
 if (!parent) return;
