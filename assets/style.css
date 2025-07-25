@@ -1,0 +1,8 @@
+body { font-family: 'Inter', sans-serif; }
+        .hero-bg { background-color: #111827; background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.1) 1px, transparent 0); background-size: 20px 20px; }
+        .cta-button { transition: all 0.3s ease; }
+        .cta-button:hover { transform: translateY(-2px); box-shadow: 0 10px 15px -3px rgba(99, 102, 241, 0.4), 0 4px 6px -2px rgba(99, 102, 241, 0.2); }
+        .package-card { transition: all 0.3s ease; }
+        .package-card:hover { transform: scale(1.03); border-color: #6366f1; }
+        .carousel-track { transition: transform 0.5s ease-in-out; }
+        .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.5s ease-in-out; }
