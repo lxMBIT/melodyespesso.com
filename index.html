@@ -361,7 +361,12 @@
             const accordionButtons = document.querySelectorAll('.accordion-button');
             accordionButtons.forEach(button => {
                 button.addEventListener('click', () => {
-                    const content = button.closest('div[itemscope][itemtype=https://schema.org/Question]').querySelector('.accordion-content');
+                    let parent = button.parentElement;
+while (parent && !(parent.tagName === 'DIV' && parent.hasAttribute('itemscope') and parent.getAttribute('itemtype') === 'https://schema.org/Question')) {
+    parent = parent.parentElement;
+}
+if (!parent) return;
+const content = parent.querySelector('.accordion-content');
                     const icon = button.querySelector('.accordion-icon');
 
                     accordionButtons.forEach(otherButton => {
