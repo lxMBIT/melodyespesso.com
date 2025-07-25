@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
                     accordionButtons.forEach(otherButton => {
                         if (otherButton !== button) {
-                            otherButton.nextElementSibling.style.maxHeight = null;
+                            if (otherButton.nextElementSibling) { otherButton.nextElementSibling.style.maxHeight = null; }
                             otherButton.querySelector('.accordion-icon').classList.remove('rotate-180');
                         }
                     });
