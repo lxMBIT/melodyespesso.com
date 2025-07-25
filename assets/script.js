@@ -39,7 +39,8 @@ document.addEventListener('DOMContentLoaded', function () {
             const accordionButtons = document.querySelectorAll('.accordion-button');
             accordionButtons.forEach(button => {
                 button.addEventListener('click', () => {
-                    const content = button.nextElementSibling;
+                    if (content) {
+const content = button.nextElementSibling;
                     const icon = button.querySelector('.accordion-icon');
 
                     accordionButtons.forEach(otherButton => {
@@ -52,7 +53,8 @@ document.addEventListener('DOMContentLoaded', function () {
                     if (content.style.maxHeight) {
                         content.style.maxHeight = null;
                         icon.classList.remove('rotate-180');
-                    } else {
+                    }
+} else {
                         content.style.maxHeight = content.scrollHeight + "px";
                         icon.classList.add('rotate-180');
                     }
