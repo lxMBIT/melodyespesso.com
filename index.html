@@ -28,7 +28,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
-        body { font-family: Inter, sans-serif; }
+        body { font-family: 'Inter', sans-serif; }
         .hero-bg { background-color: #111827; background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.1) 1px, transparent 0); background-size: 20px 20px; }
         .cta-button { transition: all 0.3s ease; }
         .cta-button:hover { transform: translateY(-2px); box-shadow: 0 10px 15px -3px rgba(99, 102, 241, 0.4), 0 4px 6px -2px rgba(99, 102, 241, 0.2); }
@@ -83,6 +83,16 @@
     </script>
 </head>
 <body class="bg-gray-50 text-gray-800">
+    <!-- Navigation -->
+    <header class="bg-white/80 backdrop-blur-lg fixed top-0 left-0 right-0 z-50 shadow-sm">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold text-gray-900">Melody<span class="text-indigo-600">Espresso</span></div>
+            <a href="#pricing" class="cta-button bg-indigo-600 text-white font-bold py-2 px-6 rounded-lg hover:bg-indigo-700">
+                Заказать Песню
+            </a>
+        </div>
+    </header>
+    <!-- Main Content -->
     ...
 </body>
 </html>
